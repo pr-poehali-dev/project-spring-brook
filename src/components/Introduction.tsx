@@ -50,9 +50,12 @@ export default function Introduction() {
           </div>
         </div>
 
-        <button className="px-10 py-3.5 rounded-full bg-amber-400 text-black font-normal text-xs uppercase tracking-widest transition-all duration-200 hover:bg-amber-300 cursor-pointer">
+        <a
+          href="#quest"
+          className="inline-block px-10 py-3.5 rounded-full bg-amber-400 text-black font-normal text-xs uppercase tracking-widest transition-all duration-200 hover:bg-amber-300 cursor-pointer"
+        >
           Начать путешествие
-        </button>
+        </a>
 
         {/* Bottom ornament */}
         <div className="flex items-center justify-center gap-4 mt-10">
