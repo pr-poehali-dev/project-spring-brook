@@ -50,12 +50,11 @@ export const quests: Quest[] = [
       type: "choice",
       question: "Что пообещала первая сестрица, если бы стала царицей?",
       options: [
-        "Напоить весь народ пивом",
         "Приготовить пир на весь мир",
         "Наткать полотна на весь мир",
         "Родить богатыря",
       ],
-      correct: 1,
+      correct: 0,
     },
     successMessage: "Верно! Первая сестрица обещала устроить пир на весь мир.",
     image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6f435e94-6e74-4f74-aac6-f17b94c08335.jpg",
