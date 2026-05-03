@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { quests } from "@/data/quests"
+import { quests, bloomMeta } from "@/data/quests"
 import type { Quest } from "@/data/quests"
 import ChoiceTaskView from "./ChoiceTask"
 import TextInputTaskView from "./TextInputTask"
@@ -79,9 +79,34 @@ export default function QuestSection() {
     }} />
   }
 
+  const bloom = bloomMeta[quest.bloomLevel]
+  const levelColors = ["from-sky-600 to-sky-300", "from-violet-600 to-violet-300", "from-amber-600 to-amber-300"]
+  const currentLevelProgress = ((currentIndex % 3)) / 3 * 100
+
   return (
     <section id="quest" className="relative bg-[#020d1a] px-6 py-16 md:py-24">
       <div className="max-w-2xl mx-auto">
+
+        {/* Bloom level indicators */}
+        <div className="flex gap-3 mb-6">
+          {([1, 2, 3] as const).map((lvl) => {
+            const meta = bloomMeta[lvl]
+            const isActive = quest.bloomLevel === lvl
+            const isDone = quest.bloomLevel > lvl
+            return (
+              <div key={lvl} className={`flex-1 rounded-xl border px-3 py-2.5 text-center transition-all duration-300 ${
+                isActive ? meta.badge : isDone ? "border-white/20 bg-white/5 opacity-60" : "border-white/10 opacity-30"
+              }`}>
+                <div className={`text-xs font-medium mb-0.5 ${isActive ? "" : "text-white/40"}`}>
+                  Уровень {lvl}
+                </div>
+                <div className={`text-[10px] uppercase tracking-wide ${isActive ? "opacity-80" : "text-white/30"}`}>
+                  {lvl === 1 ? "Знание" : lvl === 2 ? "Понимание" : "Применение"}
+                </div>
+              </div>
+            )
+          })}
+        </div>
 
         {/* Progress */}
         <div className="mb-8">
@@ -89,13 +114,13 @@ export default function QuestSection() {
             <span className="text-white/40 text-xs uppercase tracking-widest">
               Задание {currentIndex + 1} из {quests.length}
             </span>
-            <span className="text-amber-400 text-xs font-light">
+            <span className={`text-xs font-light ${bloom.color}`}>
               {score} / {currentIndex + (revealed ? 1 : 0)} верно
             </span>
           </div>
           <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-amber-600 to-amber-300 rounded-full transition-all duration-500"
+              className={`h-full bg-gradient-to-r ${levelColors[quest.bloomLevel - 1]} rounded-full transition-all duration-500`}
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -115,9 +140,11 @@ export default function QuestSection() {
           )}
 
           <div className="p-6 md:p-8">
-          {/* Chapter */}
-          <div className="flex items-center gap-2 mb-5">
-            <span className="text-amber-400/60 text-xs uppercase tracking-widest">{quest.chapter}</span>
+          {/* Bloom badge + Chapter */}
+          <div className="flex items-center gap-2 mb-5 flex-wrap">
+            <span className={`inline-block px-2.5 py-1 rounded-full border text-[10px] uppercase tracking-widest ${bloom.badge}`}>
+              {bloom.label}
+            </span>
           </div>
 
           {/* Title */}
@@ -217,11 +244,11 @@ function CompletedScreen({ score, total, onRestart }: { score: number; total: nu
   const percent = Math.round((score / total) * 100)
 
   const gradeInfo =
-    score >= 9
+    score >= 8
       ? { grade: "5", label: "Отлично", comment: "Ты настоящий знаток сказок Пушкина! Блестящий результат.", color: "border-green-400/40 bg-green-400/5 text-green-300" }
-      : score >= 7
+      : score >= 6
       ? { grade: "4", label: "Хорошо", comment: "Сказка тебе хорошо знакома. Совсем немного не хватило до пятёрки!", color: "border-blue-400/40 bg-blue-400/5 text-blue-300" }
-      : score >= 5
+      : score >= 4
       ? { grade: "3", label: "Удовлетворительно", comment: "Неплохо, но стоит перечитать сказку и попробовать ещё раз.", color: "border-amber-400/40 bg-amber-400/5 text-amber-300" }
       : { grade: "2", label: "Неудовлетворительно", comment: "Прочитай сказку внимательно и попробуй снова — у тебя всё получится!", color: "border-red-400/40 bg-red-400/5 text-red-300" }
 
@@ -260,10 +287,10 @@ function CompletedScreen({ score, total, onRestart }: { score: number; total: nu
         {/* Criteria reminder */}
         <div className="grid grid-cols-4 gap-2 mb-8 text-xs">
           {[
-            { g: "5", r: "9–10", active: score >= 9 },
-            { g: "4", r: "7–8", active: score >= 7 && score <= 8 },
-            { g: "3", r: "5–6", active: score >= 5 && score <= 6 },
-            { g: "2", r: "0–4", active: score <= 4 },
+            { g: "5", r: "8–9", active: score >= 8 },
+            { g: "4", r: "6–7", active: score >= 6 && score <= 7 },
+            { g: "3", r: "4–5", active: score >= 4 && score <= 5 },
+            { g: "2", r: "0–3", active: score <= 3 },
           ].map(({ g, r, active }) => (
             <div key={g} className={`rounded-xl py-2 border text-center transition-all ${active ? "border-amber-400/60 bg-amber-400/10 text-amber-300" : "border-white/10 text-white/20"}`}>
               <div className="text-lg font-light">{g}</div>
