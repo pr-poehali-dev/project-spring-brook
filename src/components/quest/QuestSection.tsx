@@ -98,10 +98,10 @@ export default function QuestSection() {
                 isActive ? meta.badge : isDone ? "border-white/20 bg-white/5 opacity-60" : "border-white/10 opacity-30"
               }`}>
                 <div className={`text-xs font-medium mb-0.5 ${isActive ? "" : "text-white/40"}`}>
-                  Уровень {lvl}
+                  {lvl === 1 ? "Вспоминаем" : lvl === 2 ? "Разбираемся" : "Думаем глубже"}
                 </div>
                 <div className={`text-[10px] uppercase tracking-wide ${isActive ? "opacity-80" : "text-white/30"}`}>
-                  {lvl === 1 ? "Знание" : lvl === 2 ? "Понимание" : "Применение"}
+                  {lvl === 1 ? "Факты" : lvl === 2 ? "Смысл" : "Анализ"}
                 </div>
               </div>
             )

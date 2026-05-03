@@ -35,14 +35,14 @@ export default function Introduction() {
           </p>
         </div>
 
-        {/* Уровни по Блуму */}
+        {/* Уровни */}
         <div className="mb-8">
-          <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-4 font-light">Три уровня по таксономии Блума</h3>
+          <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-4 font-light">Три уровня сложности</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { lvl: "1", name: "Знание", desc: "Вспомни и назови факты из сказки. 3 задания.", color: "border-sky-400/40 bg-sky-400/5 text-sky-300" },
-              { lvl: "2", name: "Понимание", desc: "Объясни смысл событий и поступков героев. 3 задания.", color: "border-violet-400/40 bg-violet-400/5 text-violet-300" },
-              { lvl: "3", name: "Применение", desc: "Используй знания, чтобы решить новую задачу. 3 задания.", color: "border-amber-400/40 bg-amber-400/5 text-amber-300" },
+              { lvl: "1", name: "Вспоминаем", desc: "Отвечаем на вопросы о фактах и событиях сказки. 3 задания.", color: "border-sky-400/40 bg-sky-400/5 text-sky-300" },
+              { lvl: "2", name: "Разбираемся", desc: "Объясняем, почему герои поступают именно так. 3 задания.", color: "border-violet-400/40 bg-violet-400/5 text-violet-300" },
+              { lvl: "3", name: "Думаем глубже", desc: "Используем знания сказки, чтобы решить трудные задачи. 3 задания.", color: "border-amber-400/40 bg-amber-400/5 text-amber-300" },
             ].map(({ lvl, name, desc, color }) => (
               <div key={lvl} className={`rounded-xl border px-4 py-4 ${color}`}>
                 <div className="text-xs uppercase tracking-widest opacity-60 mb-1">Уровень {lvl}</div>
@@ -58,7 +58,7 @@ export default function Introduction() {
           <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-4 font-light">Как проходить квест</h3>
           <ul className="space-y-3">
             {[
-              { icon: "①", text: "Квест состоит из трёх уровней по таксономии Блума: Знание → Понимание → Применение." },
+              { icon: "①", text: "Квест состоит из трёх уровней — от простых вопросов к сложным размышлениям." },
               { icon: "②", text: "На каждом уровне — 3 задания разного типа: выбор ответа, расстановка по порядку или выбор нескольких вариантов." },
               { icon: "③", text: "Читай инструкцию к каждому заданию — в ней указано, что именно нужно сделать." },
               { icon: "④", text: "Нажми «Проверить» или «Ответить» — сразу увидишь результат и объяснение." },
