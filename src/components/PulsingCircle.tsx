@@ -7,7 +7,7 @@ export default function PulsingCircle() {
       <div className="relative w-20 h-20 flex items-center justify-center">
         {/* Pulsing Border Circle */}
         <PulsingBorder
-          colors={["#BEECFF", "#E77EDC", "#FF4C3E", "#00FF88", "#FFD700"]}
+          colors={["#FFD700", "#87CEEB", "#FFF8DC", "#4169E1", "#DAA520"]}
           colorBack="#00000000"
           speed={1.5}
           roundness={1}
@@ -43,7 +43,7 @@ export default function PulsingCircle() {
           </defs>
           <text className="text-sm fill-white/80">
             <textPath href="#circle" startOffset="0%">
-              Vertex Studio - Vertex Studio - Vertex Studio -
+              Царь Салтан ✦ Остров Буян ✦ Царевна-Лебедь ✦
             </textPath>
           </text>
         </motion.svg>
