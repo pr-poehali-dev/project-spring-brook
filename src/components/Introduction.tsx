@@ -40,7 +40,7 @@ export default function Introduction() {
           </div>
           <div className="h-8 w-px bg-amber-400/20 hidden sm:block" />
           <div className="text-center">
-            <div className="text-3xl font-light text-amber-300 mb-1">30+</div>
+            <div className="text-3xl font-light text-amber-300 mb-1">10</div>
             <div className="text-xs text-white/40 uppercase tracking-widest">заданий</div>
           </div>
           <div className="h-8 w-px bg-amber-400/20 hidden sm:block" />
