@@ -4,6 +4,7 @@ import PulsingCircle from "@/components/PulsingCircle"
 import Header from "@/components/Header"
 import Introduction from "@/components/Introduction"
 import QuestSection from "@/components/quest/QuestSection"
+import Resources from "@/components/Resources"
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       </ShaderBackground>
       <Introduction />
       <QuestSection />
+      <Resources />
     </>
   )
 }

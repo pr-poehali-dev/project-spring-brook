@@ -1,7 +1,7 @@
 export default function Introduction() {
   return (
     <section id="about" className="relative z-10 bg-[#020d1a] text-white px-6 py-20 md:py-28">
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto">
 
         {/* Divider ornament */}
         <div className="flex items-center justify-center gap-4 mb-10">
@@ -10,27 +10,69 @@ export default function Introduction() {
           <div className="h-px w-24 bg-gradient-to-l from-transparent to-amber-400/60" />
         </div>
 
-        <p className="text-amber-300/80 text-xs uppercase tracking-widest mb-4 font-light">
-          Интерактивный квест
+        <p className="text-amber-300/80 text-xs uppercase tracking-widest mb-4 font-light text-center">
+          Интерактивный литературный квест
         </p>
 
-        <h2 className="text-3xl md:text-4xl font-light text-white mb-8 leading-snug">
+        <h2 className="text-3xl md:text-4xl font-light text-white mb-8 leading-snug text-center">
           Три сестрицы под окном
           <br />
           <span className="italic text-amber-200">пряли поздно вечерком…</span>
         </h2>
 
-        <p className="text-white/60 text-sm leading-relaxed mb-6 font-light">
-          Давным-давно, в тридевятом царстве, царь Салтан услышал заветные слова —
-          и судьба трёх сестёр изменилась навсегда. Молодая царица отправилась в далёкое
-          плаванье, а её сын Гвидон явился на свет прямо посреди бушующего моря.
-        </p>
+        {/* Приветствие */}
+        <div className="mb-10">
+          <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-3 font-light">Добро пожаловать!</h3>
+          <p className="text-white/70 text-sm leading-relaxed mb-4">
+            Дорогой читатель! Перед тобой — интерактивный квест по великой сказке Александра Сергеевича Пушкина
+            «Сказка о царе Салтане, о сыне его славном и могучем богатыре князе Гвидоне Салтановиче и о прекрасной
+            царевне Лебеди» (1831).
+          </p>
+          <p className="text-white/70 text-sm leading-relaxed">
+            Тебя ждёт путешествие по страницам этой удивительной сказки: от тайного разговора трёх сестёр до
+            счастливой встречи царя Салтана с семьёй на острове Буяне. Разгадывай загадки, расставляй события
+            по порядку и докажи, что знаешь сказку Пушкина от начала до конца!
+          </p>
+        </div>
 
-        <p className="text-white/60 text-sm leading-relaxed mb-12 font-light">
-          Тебя ждёт путешествие по страницам великой сказки Александра Сергеевича Пушкина.
-          Разгадывай загадки, помогай Гвидону, освобождай царевну-лебедь и открывай
-          чудеса острова Буяна. Каждый верный ответ приближает тебя к счастливой развязке.
-        </p>
+        {/* Инструкция */}
+        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 mb-8">
+          <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-4 font-light">Как проходить квест</h3>
+          <ul className="space-y-3">
+            {[
+              { icon: "①", text: "Читай каждое задание внимательно — в инструкции всегда есть подсказка о типе задания." },
+              { icon: "②", text: "Выбирай ответ или вводи слово с клавиатуры, расставляй события по порядку или отмечай несколько правильных вариантов." },
+              { icon: "③", text: "Нажми кнопку «Проверить» или «Ответить» — сразу увидишь, верно ли ты ответил." },
+              { icon: "④", text: "Переходи к следующему заданию кнопкой «Следующее задание». Всего 10 заданий." },
+              { icon: "⑤", text: "В конце квеста ты получишь итоговую оценку и сможешь пройти квест заново." },
+            ].map(({ icon, text }) => (
+              <li key={icon} className="flex gap-3 text-sm text-white/60 leading-relaxed">
+                <span className="text-amber-400 shrink-0 font-light">{icon}</span>
+                {text}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Критерии оценивания */}
+        <div className="bg-white/[0.03] border border-amber-400/20 rounded-2xl p-6 mb-12">
+          <h3 className="text-amber-400 text-xs uppercase tracking-widest mb-4 font-light">Критерии оценивания</h3>
+          <p className="text-white/50 text-xs mb-4">За каждый правильный ответ начисляется 1 балл. Итоговая оценка выставляется по результатам всех 10 заданий.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { grade: "5", label: "Отлично", range: "9–10 баллов", color: "border-green-400/40 bg-green-400/5 text-green-300" },
+              { grade: "4", label: "Хорошо", range: "7–8 баллов", color: "border-blue-400/40 bg-blue-400/5 text-blue-300" },
+              { grade: "3", label: "Удовлетворительно", range: "5–6 баллов", color: "border-amber-400/40 bg-amber-400/5 text-amber-300" },
+              { grade: "2", label: "Неудовлетворительно", range: "0–4 балла", color: "border-red-400/40 bg-red-400/5 text-red-300" },
+            ].map(({ grade, label, range, color }) => (
+              <div key={grade} className={`rounded-xl border px-4 py-3 text-center ${color}`}>
+                <div className="text-2xl font-light mb-1">{grade}</div>
+                <div className="text-xs font-medium mb-0.5">{label}</div>
+                <div className="text-xs opacity-60">{range}</div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Stats row */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mb-12">
@@ -50,12 +92,14 @@ export default function Introduction() {
           </div>
         </div>
 
-        <a
-          href="#quest"
-          className="inline-block px-10 py-3.5 rounded-full bg-amber-400 text-black font-normal text-xs uppercase tracking-widest transition-all duration-200 hover:bg-amber-300 cursor-pointer"
-        >
-          Начать путешествие
-        </a>
+        <div className="text-center">
+          <a
+            href="#quest"
+            className="inline-block px-10 py-3.5 rounded-full bg-amber-400 text-black font-normal text-xs uppercase tracking-widest transition-all duration-200 hover:bg-amber-300 cursor-pointer"
+          >
+            Начать путешествие
+          </a>
+        </div>
 
         {/* Bottom ornament */}
         <div className="flex items-center justify-center gap-4 mt-10">
