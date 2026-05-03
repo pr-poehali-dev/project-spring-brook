@@ -27,12 +27,12 @@ export default function HeroContent() {
 
         {/* Buttons */}
         <div className="flex items-center gap-4 flex-wrap">
-          <button className="px-8 py-3 rounded-full bg-transparent border border-amber-300/40 text-white font-normal text-xs transition-all duration-200 hover:bg-amber-300/10 hover:border-amber-300/60 cursor-pointer">
+          <a href="#about" className="px-8 py-3 rounded-full bg-transparent border border-amber-300/40 text-white font-normal text-xs transition-all duration-200 hover:bg-amber-300/10 hover:border-amber-300/60 cursor-pointer">
             О квесте
-          </button>
-          <button className="px-8 py-3 rounded-full bg-amber-300 text-black font-normal text-xs transition-all duration-200 hover:bg-amber-200 cursor-pointer">
+          </a>
+          <a href="#quest" className="px-8 py-3 rounded-full bg-amber-300 text-black font-normal text-xs transition-all duration-200 hover:bg-amber-200 cursor-pointer">
             Начать квест
-          </button>
+          </a>
         </div>
       </div>
     </main>

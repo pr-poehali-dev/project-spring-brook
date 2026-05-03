@@ -102,7 +102,19 @@ export default function QuestSection() {
         </div>
 
         {/* Card */}
-        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8">
+        <div className="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
+          {/* Illustration */}
+          {quest.image && (
+            <div className="w-full h-52 overflow-hidden">
+              <img
+                src={quest.image}
+                alt={quest.title}
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          )}
+
+          <div className="p-6 md:p-8">
           {/* Chapter */}
           <div className="flex items-center gap-2 mb-5">
             <span className="text-amber-400/60 text-xs uppercase tracking-widest">{quest.chapter}</span>
@@ -181,6 +193,7 @@ export default function QuestSection() {
               </div>
             </div>
           )}
+          </div>
         </div>
 
         {/* Next button */}

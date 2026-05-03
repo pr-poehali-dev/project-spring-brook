@@ -1,6 +1,6 @@
 export default function Introduction() {
   return (
-    <section className="relative z-10 bg-[#020d1a] text-white px-6 py-20 md:py-28">
+    <section id="about" className="relative z-10 bg-[#020d1a] text-white px-6 py-20 md:py-28">
       <div className="max-w-3xl mx-auto text-center">
 
         {/* Divider ornament */}

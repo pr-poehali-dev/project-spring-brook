@@ -37,6 +37,7 @@ export interface Quest {
   instruction: string
   task: Task
   successMessage: string
+  image?: string
 }
 
 export const quests: Quest[] = [
@@ -57,6 +58,7 @@ export const quests: Quest[] = [
       correct: 1,
     },
     successMessage: "Верно! Первая сестрица обещала устроить пир на весь мир.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6f435e94-6e74-4f74-aac6-f17b94c08335.jpg",
   },
   {
     id: 2,
@@ -75,6 +77,7 @@ export const quests: Quest[] = [
       correct: 1,
     },
     successMessage: "Правильно! Третья сестрица обещала родить богатыря — и стала царицей.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6f435e94-6e74-4f74-aac6-f17b94c08335.jpg",
   },
   {
     id: 3,
@@ -95,6 +98,7 @@ export const quests: Quest[] = [
       correctOrder: [2, 0, 1, 3, 4],
     },
     successMessage: "Отлично! Ты правильно восстановил ход событий.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6f435e94-6e74-4f74-aac6-f17b94c08335.jpg",
   },
   {
     id: 4,
@@ -108,6 +112,7 @@ export const quests: Quest[] = [
       correct: ["буян", "остров буян"],
     },
     successMessage: "Верно! Остров Буян — волшебное место в сказке Пушкина.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6bfa0b6b-cf63-4a6f-bac9-37ac608e9279.jpg",
   },
   {
     id: 5,
@@ -126,6 +131,7 @@ export const quests: Quest[] = [
       correct: 1,
     },
     successMessage: "Правильно! Белочка грызла орешки с золотой скорлупой и изумрудными ядрами.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/fc19b04f-f259-4e26-a60a-490896343df0.jpg",
   },
   {
     id: 6,
@@ -140,6 +146,7 @@ export const quests: Quest[] = [
       correct: ["месяц под косой", "звезда во лбу", "зари алее"],
     },
     successMessage: "Верно! Месяц под косой, звезда во лбу — так описывает Пушкин царевну.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/39f9351b-6582-4557-9fea-ec49f0844288.jpg",
   },
   {
     id: 7,
@@ -153,6 +160,7 @@ export const quests: Quest[] = [
       correct: ["33", "тридцать три"],
     },
     successMessage: "Отлично! Тридцать три богатыря — грозная дружина острова Буяна.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6bfa0b6b-cf63-4a6f-bac9-37ac608e9279.jpg",
   },
   {
     id: 8,
@@ -167,6 +175,7 @@ export const quests: Quest[] = [
       correctOrder: [1, 2, 0],
     },
     successMessage: "Правильно! Сначала комар, потом муха, а потом шмель.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/39f9351b-6582-4557-9fea-ec49f0844288.jpg",
   },
   {
     id: 9,
@@ -185,6 +194,7 @@ export const quests: Quest[] = [
       correct: 1,
     },
     successMessage: "Верно! Ткачиха, повариха и Бабариха — главные злодейки сказки.",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/6f435e94-6e74-4f74-aac6-f17b94c08335.jpg",
   },
   {
     id: 10,
@@ -206,5 +216,6 @@ export const quests: Quest[] = [
     },
     successMessage:
       "Поздравляем! Ты прошёл квест и узнал всю сказку о царе Салтане. Царь нашёл семью, Гвидон обрёл невесту — и все жили счастливо!",
+    image: "https://cdn.poehali.dev/projects/04626ec3-f7bb-46e9-a2f3-fa2bce633ddf/files/39f9351b-6582-4557-9fea-ec49f0844288.jpg",
   },
 ]
