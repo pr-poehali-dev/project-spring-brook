@@ -105,11 +105,11 @@ export default function QuestSection() {
         <div className="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden">
           {/* Illustration */}
           {quest.image && (
-            <div className="w-full h-52 overflow-hidden">
+            <div className="w-full">
               <img
                 src={quest.image}
                 alt={quest.title}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto object-contain"
               />
             </div>
           )}
